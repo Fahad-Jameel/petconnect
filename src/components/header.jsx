@@ -1,34 +1,56 @@
-import React from "react";
-import { FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
-import styles from "./HEader.module.css";
+// Header.jsx
+import React, { useState } from 'react';
+import styles from './css/Header.module.css';
+import { Menu, Search, Heart, ShoppingCart } from 'lucide-react';
 
-const Header = () => {
+function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className={styles.container}>
-      {/* Navbar */}
-      <nav className={styles.navbar}>
-        <div className={styles.logoContainer}>
-          <img src="/logo.png" alt="Pawtopia" className={styles.logo} />
-          <span className={styles.brand}>PAWTOPIA</span>
-        </div>
-        <ul className={styles.navLinks}>
-          <li className={styles.activeLink}>Home</li>
-          <li>Shop</li>
-          <li>Adopt</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-        </ul>
-        <div className={styles.navIcons}>
-          <div className={styles.searchContainer}>
-            <input type="text" placeholder="Search products..." className={styles.searchInput} />
-            <FaSearch className={styles.icon} />
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.headerContent}>
+          <div className={styles.logo}>
+            <img src="/logo.svg" alt="PawStyles" />
           </div>
-          <FaHeart className={styles.icon} />
-          <FaShoppingCart className={styles.icon} />
+
+          <nav className={styles.desktopNav}>
+            <a href="/" className={styles.navLink}>Home</a>
+            <a href="/shop" className={styles.navLink}>Shop</a>
+            <a href="/adopt" className={styles.navLink}>Adopt</a>
+            <a href="/about" className={styles.navLink}>About Us</a>
+            <a href="/contact" className={styles.navLink}>Contact Us</a>
+          </nav>
+
+          <div className={styles.headerActions}>
+            <div className={styles.searchBar}>
+              <input type="text" placeholder="Search products..." />
+              <Search className={styles.searchIcon} />
+            </div>
+            <Heart className={styles.actionIcon} />
+            <ShoppingCart className={styles.actionIcon} />
+            <button className={styles.menuButton} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <Menu />
+            </button>
+          </div>
         </div>
-      </nav>
-    </div>
+
+        {isMenuOpen && (
+          <div className={styles.mobileMenu}>
+            <a href="/" className={styles.mobileNavLink}>Home</a>
+            <a href="/shop" className={styles.mobileNavLink}>Shop</a>
+            <a href="/adopt" className={styles.mobileNavLink}>Adopt</a>
+            <a href="/about" className={styles.mobileNavLink}>About Us</a>
+            <a href="/contact" className={styles.mobileNavLink}>Contact Us</a>
+            <div className={styles.mobileSearch}>
+              <input type="text" placeholder="Search products..." />
+              <Search className={styles.searchIcon} />
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
   );
-};
+}
 
 export default Header;

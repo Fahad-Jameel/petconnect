@@ -1,0 +1,88 @@
+.hero {
+    background-color: #e0f7fa;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .textContent {
+    max-width: 36rem;
+  }
+  
+  .textContent h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
+  
+  .textContent p {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+  }
+  
+  .textContent button {
+    background-color: black;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .textContent button:hover {
+    background-color: #1a1a1a;
+  }
+  
+  .imageContent {
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  .parrot {
+    position: absolute;
+    top: -5rem;
+    right: 0;
+    width: 8rem;
+  }
+  
+  .petImages {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .dog {
+    width: 12rem;
+  }
+  
+  .cat {
+    width: 8rem;
+  }
+  
+  @media (min-width: 768px) {
+    .content {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem;
+    }
+  
+    .parrot {
+      width: 12rem;
+    }
+  
+    .dog {
+      width: 16rem;
+    }
+  
+    .cat {
+      width: 12rem;
+    }
+  }
