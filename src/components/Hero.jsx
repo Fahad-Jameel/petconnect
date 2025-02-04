@@ -22,7 +22,7 @@ const Hero = () => {
           <p className={styles.description}>
             PetConnect is your one-stop destination for pet adoption and all 
             your pet care needs. From finding loving homes for pets to 
-            offering a wide range of supplies and services.
+            offering a wide range of supplies and services. Find Your Perfect Pet with Confidence!
           </p>
           <button className={styles.button}>Shop Now</button>
         </div>

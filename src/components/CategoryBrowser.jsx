@@ -2,13 +2,17 @@
 import React from 'react';
 import styles from './css/CategoryBrowser.module.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
+import toys from '../assets/pet-toys.jpg';
+import petTreat from '../assets/pet-treats.jpg';
+import petKit from '../assets/pet-kit.jpg';
+import pets from '../assets/pets.jpg';
 function CategoryBrowser() {
   const categories = [
-    { name: 'Pet toys', image: '/images/pet-toys.jpg', products: '58 products' },
-    { name: 'Pet Treat', image: '/images/pet-treat.jpg', products: '45 products' },
-    { name: 'Pet Kit', image: '/images/pet-kit.jpg', products: '23 products' },
-    { name: 'Wagewear', image: '/images/wagewear.jpg', products: '34 products' },
+    { name: 'Pets Breed', image: pets, products: '70 products' },
+    { name: 'Pet toys', image: toys, products: '68 products' },
+    { name: 'Pet Treat', image: petTreat, products: '45 products' },
+    { name: 'Pet Kit', image: petKit, products: '60 products' },
+   
   ];
 
   return (

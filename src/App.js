@@ -19,10 +19,9 @@ function App() {
         <CategoryBrowser />
         <FeaturedProducts />
         <SmartShop />
-        <BrandShowcase />
-        <BestSelling />
+       
         <ShopByPet />
-        <BlogSection />
+        
       </main>
       <Footer />
     </div>

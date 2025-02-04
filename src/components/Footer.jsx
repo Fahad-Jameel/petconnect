@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './css/Footer.module.css';
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
-
+import Logo from '../assets/logo.png';
 function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.footerGrid}>
           <div className={styles.companyInfo}>
-            <img src="/logo.svg" alt="PawStyles" className={styles.logo} />
-            <p>PawStyles is your one-stop destination for pet adoption and all your pet care needs. From finding loving homes for pets to providing the best care products.</p>
+            <img src={Logo} alt="PawStyles" className={styles.logo} />
+            <p>PetConnect connect pet lovers with a wide range of furry companions, along with top-quality pet accessories and nutritious pet food. At PetConnect, we make pet ownership easy, joyful, and hassle-free!</p>
             <div className={styles.socialLinks}>
               <a href="#"><Facebook /></a>
               <a href="#"><Twitter /></a>
@@ -51,11 +51,11 @@ function Footer() {
 
         <div className={styles.bottomSection}>
           <p>© 2025 PawStyles. All rights reserved.</p>
-          <div className={styles.paymentMethods}>
+          {/* <div className={styles.paymentMethods}>
             <img src="/images/visa.png" alt="Visa" />
             <img src="/images/mastercard.png" alt="Mastercard" />
             <img src="/images/paypal.png" alt="PayPal" />
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
