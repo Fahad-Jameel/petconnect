@@ -1,88 +1,208 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .hero {
-    background-color: #e0f7fa;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    margin: 2rem 0;
-  }
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  min-height: 80vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+.backgroundCircles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden; /* Ensure background circles do not extend beyond boundaries */
+}
+
+.circle1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  background-color: #E6F6F7;
+  border-radius: 50%;
+  transform: translate(-30%, -30%);
+}
+
+.circle2 {
+  position: relative;
+  top: 80px;
+  right: -980px;
+  width: 600px;
+  height: 600px;
+  background-color: #E6F6F7;
+  border-radius: 50%;
   
-  .content {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-  }
+}
+
+.content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 1;
+  padding: 0 1rem; /* Added padding for smaller screens */
   
+}
+
+.textContent {
+  flex: 1;
+  max-width: 600px;
+  margin-top: 60px;
+}
+
+.imageContent {
+  flex: 1;
+  position: relative;
+  min-height: 500px;
+}
+
+
+
+.category {
+  color: #8CD6D7;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  color: #666;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.button {
+  background-color: black;
+  color: white;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+
+
+.parrot {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: auto;
+  z-index: 2;
+}
+
+.dog {
+  width: 400px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  top: 250px;
+  left: -40px;
+}
+
+.cat {
+  position: absolute;
+  bottom: -90px;
+  left: 300px;
+  width: 350px;
+  height: auto;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+
+  .circle2 {
+   position: absolute;
+    bottom: 200px;
+    right: 400px;
+    width: 400px;
+    height: 400px;
+   
+    
+    transform: translate(25%, 25%);
+  }
   .textContent {
-    max-width: 36rem;
+    margin: 0 auto;
   }
+
+  .description {
+    margin: 0 auto 2rem auto;
+  }
+
   
-  .textContent h1 {
+
+  .title {
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
   }
+
   
-  .textContent p {
-    font-size: 1.125rem;
-    color: #4b5563;
-    margin-bottom: 2rem;
-  }
-  
-  .textContent button {
-    background-color: black;
-    color: white;
-    padding: 0.75rem 2rem;
-    border-radius: 9999px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .textContent button:hover {
-    background-color: #1a1a1a;
-  }
-  
-  .imageContent {
-    position: relative;
-    margin-top: 2rem;
-  }
-  
-  .parrot {
-    position: absolute;
-    top: -5rem;
-    right: 0;
-    width: 8rem;
-  }
-  
-  .petImages {
-    display: flex;
-    align-items: flex-end;
-  }
-  
-  .dog {
-    width: 12rem;
-  }
-  
-  .cat {
-    width: 8rem;
-  }
-  
-  @media (min-width: 768px) {
-    .content {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 3rem;
-    }
-  
-    .parrot {
-      width: 12rem;
-    }
-  
-    .dog {
-      width: 16rem;
-    }
-  
-    .cat {
-      width: 12rem;
-    }
-  }
+
+
+.content {
+  flex-direction: column;
+  text-align: center;
+}
+
+.imageContent {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dog {
+ 
+  width: 250px;
+  height: 250px;
+  position: relative;
+  z-index: 1;
+  top: 200px;
+  left: 40px;
+}
+
+.cat {
+  width: 250px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  top: 200px;
+  left: 0px;
+}
+
+.parrot {
+  width: 150px;
+}
+
+}

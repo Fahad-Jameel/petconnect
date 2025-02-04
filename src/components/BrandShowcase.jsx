@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './css/BrandShowcase.module.css';
 
 function BrandShowcase() {
   const brands = [
@@ -9,15 +10,11 @@ function BrandShowcase() {
   ];
 
   return (
-    <div className="my-12">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div className={styles.container}>
+      <div className={styles.brandGrid}>
         {brands.map((brand, index) => (
-          <div key={index} className="flex items-center justify-center">
-            <img
-              src={brand.logo}
-              alt={`${brand.name} logo`}
-              className="h-12 object-contain grayscale hover:grayscale-0 transition-all cursor-pointer"
-            />
+          <div key={index} className={styles.brandCard}>
+            <img src={brand.logo} alt={`${brand.name} logo`} />
           </div>
         ))}
       </div>

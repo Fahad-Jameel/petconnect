@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './css/BlogSection.module.css';
 import { ArrowRight } from 'lucide-react';
 
 function BlogSection() {
@@ -21,27 +22,19 @@ function BlogSection() {
   ];
 
   return (
-    <div className="my-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className={styles.container}>
+      <div className={styles.blogGrid}>
         {blogs.map((blog, index) => (
-          <div key={index} className="group cursor-pointer">
-            <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute top-3 right-3 bg-black text-white text-xs px-3 py-1 rounded-full">
-                {blog.time}
-              </div>
+          <div key={index} className={styles.blogCard}>
+            <div className={styles.imageContainer}>
+              <img src={blog.image} alt={blog.title} />
+              <div className={styles.readTime}>{blog.time}</div>
             </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold group-hover:text-blue-600 transition-colors">
-                {blog.title}
-              </h3>
-              <button className="mt-2 text-sm text-gray-600 flex items-center gap-2 group-hover:text-blue-600 transition-colors">
+            <div className={styles.blogContent}>
+              <h3>{blog.title}</h3>
+              <button className={styles.readMoreButton}>
                 Read More 
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className={styles.icon} />
               </button>
             </div>
           </div>

@@ -1,0 +1,33 @@
+.container {
+    margin: 3rem 0;
+  }
+  
+  .brandGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .brandCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .brandCard img {
+    height: 3rem;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .brandCard img:hover {
+    filter: grayscale(0%);
+  }
+  
+  @media (min-width: 768px) {
+    .brandGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './css/ShopByPet.module.css';
 
 function ShopByPet() {
   const pets = [
@@ -11,20 +12,16 @@ function ShopByPet() {
   ];
 
   return (
-    <div className="my-12">
-      <h2 className="text-2xl font-bold mb-6">Shop by pet</h2>
+    <div className={styles.container}>
+      <h2>Shop by pet</h2>
       
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+      <div className={styles.petGrid}>
         {pets.map((pet, index) => (
-          <div key={index} className="flex flex-col items-center cursor-pointer group">
-            <div className="w-24 h-24 rounded-full bg-cyan-50 flex items-center justify-center mb-2 group-hover:bg-cyan-100 transition-colors">
-              <img
-                src={pet.image}
-                alt={pet.name}
-                className="w-16 h-16 object-contain"
-              />
+          <div key={index} className={styles.petCard}>
+            <div className={styles.iconContainer}>
+              <img src={pet.image} alt={pet.name} />
             </div>
-            <span className="text-sm font-medium">{pet.name}</span>
+            <span>{pet.name}</span>
           </div>
         ))}
       </div>

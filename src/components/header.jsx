@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styles from './css/Header.module.css';
 import { Menu, Search, Heart, ShoppingCart } from 'lucide-react';
+import Logo from '../assets/logo.png';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ function Header() {
       <div className={styles.container}>
         <div className={styles.headerContent}>
           <div className={styles.logo}>
-            <img src="/logo.svg" alt="PawStyles" />
+            <img src={Logo} alt="PawStyles" />
           </div>
 
           <nav className={styles.desktopNav}>

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './css/BestSelling.module.css';
 import { Heart } from 'lucide-react';
 
 function BestSelling() {
@@ -46,25 +47,21 @@ function BestSelling() {
   ];
 
   return (
-    <div className="my-12">
-      <h2 className="text-2xl font-bold mb-6">Best selling products</h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Best selling products</h2>
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className={styles.productGrid}>
         {products.map((product, index) => (
-          <div key={index} className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow">
-            <div className="relative">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-48 object-contain"
-              />
-              <button className="absolute top-2 right-2 p-2 rounded-full bg-white shadow-md hover:bg-gray-50">
-                <Heart className="w-4 h-4 text-gray-600" />
+          <div key={index} className={styles.productCard}>
+            <div className={styles.imageContainer}>
+              <img src={product.image} alt={product.name} />
+              <button className={styles.wishlistButton}>
+                <Heart className={styles.heartIcon} />
               </button>
             </div>
-            <div className="mt-4">
-              <h3 className="text-sm font-semibold">{product.name}</h3>
-              <p className="text-gray-600 text-sm mt-1">{product.price}</p>
+            <div className={styles.productInfo}>
+              <h3>{product.name}</h3>
+              <p>{product.price}</p>
             </div>
           </div>
         ))}
