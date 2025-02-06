@@ -51,11 +51,7 @@ function Footer() {
 
         <div className={styles.bottomSection}>
           <p>© 2025 PawStyles. All rights reserved.</p>
-          {/* <div className={styles.paymentMethods}>
-            <img src="/images/visa.png" alt="Visa" />
-            <img src="/images/mastercard.png" alt="Mastercard" />
-            <img src="/images/paypal.png" alt="PayPal" />
-          </div> */}
+         
         </div>
       </div>
     </footer>

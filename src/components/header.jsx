@@ -4,6 +4,7 @@ import styles from './css/Header.module.css';
 import { Menu, Search, Heart, ShoppingCart } from 'lucide-react';
 import Logo from '../assets/logo.png';
 
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -18,7 +19,7 @@ function Header() {
           <nav className={styles.desktopNav}>
             <a href="/" className={styles.navLink}>Home</a>
             <a href="/shop" className={styles.navLink}>Shop</a>
-            <a href="/adopt" className={styles.navLink}>Adopt</a>
+            <a href="/petadoption" className={styles.navLink}>Adopt</a>
             <a href="/about" className={styles.navLink}>About Us</a>
             <a href="/contact" className={styles.navLink}>Contact Us</a>
           </nav>
