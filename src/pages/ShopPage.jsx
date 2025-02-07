@@ -184,6 +184,7 @@ function ShopPage() {
         };
 
         const ProductGrid = ({ products }) => (
+          
           <motion.div 
             layout
             className={styles.productsGrid}
