@@ -1,40 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Users, 
-  Heart, 
-  Award, 
-  Shield, 
-  CheckCircle, 
-  Instagram, 
-  Facebook, 
-  Twitter,
-  Mail
-} from 'lucide-react';
+    Heart, 
+    Award, 
+    Shield, 
+    CheckCircle,
+    Mail,
+    Star,
+    Users,
+    Clock
+  } from 'lucide-react';
 import styles from './css/AboutUs.module.css';
+import Family from '../assets/family.jpg';
 
 function AboutUs() {
   const stats = [
     { number: '5000+', label: 'Pets Adopted', icon: Heart },
-    { number: '10+', label: 'Years Experience', icon: Award },
+    { number: '1000+', label: 'Products Available', icon: Award },
     { number: '100%', label: 'Satisfaction', icon: CheckCircle },
     { number: '24/7', label: 'Support', icon: Shield },
   ];
-
-  const team = [
+  const features = [
     {
-      name: 'Sarah Johnson',
-      role: 'Founder & CEO',
-      image: '/team/sarah.jpg',
-      bio: 'Passionate about connecting pets with loving homes.',
-      social: {
-        twitter: '#',
-        instagram: '#',
-        facebook: '#',
-      }
+      icon: Star,
+      title: "Premium Pet Selection",
+      description: "Find your perfect companion from our carefully curated selection of healthy, well-cared-for pets.",
+      color: "#4d96ff"
     },
-    // Add more team members here
+    {
+      icon: Users,
+      title: "Expert Support Team",
+      description: "Our certified pet specialists are available 24/7 to guide you through your pet parenthood journey.",
+      color: "#51cf66"
+    },
+    {
+      icon: Clock,
+      title: "Seamless Experience",
+      description: "From adoption to aftercare, enjoy our streamlined process and comprehensive support system.",
+      color: "#845ef7"
+    }
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { staggerChildren: 0.3 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6 }
+    }
+  };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -64,15 +86,15 @@ function AboutUs() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Connecting Hearts, 
-          <span className={styles.gradient}>Creating Families</span>
+          Welcome to
+          <span className={styles.gradient}> PetConnect</span>
         </motion.h1>
         <motion.p
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          We're on a mission to create lasting bonds between pets and their forever homes
+          The ultimate online platform for pet lovers!
         </motion.p>
       </motion.section>
 
@@ -109,20 +131,18 @@ function AboutUs() {
           className={styles.storyContent}
           variants={fadeInUp}
         >
-          <h2>Our Story</h2>
+          <h2>Our Mission</h2>
           <p>
-            Founded in 2013, PawStyles began with a simple idea: every pet deserves 
-            a loving home. What started as a small local initiative has grown into 
-            a nationwide movement, connecting thousands of pets with their perfect 
-            families.
+            We're more than just a pet shop—we're a community dedicated to connecting pets 
+            with loving homes and providing everything you need to care for them. Whether 
+            you're looking to buy or adopt a pet, find premium pet accessories, or stock up 
+            on nutritious pet food, PetConnect has you covered.
           </p>
-          <motion.button 
-            className={styles.storyButton}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Learn More About Our Journey
-          </motion.button>
+          <p>
+            Our mission is to make pet ownership simple, joyful, and accessible. We believe 
+            every pet deserves a caring home, and every pet owner should have access to 
+            trusted resources.
+          </p>
         </motion.div>
         
         <motion.div 
@@ -132,48 +152,45 @@ function AboutUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className={styles.imageWrapper} />
+          <div className={styles.imageWrapper} > 
+            <img src={Family} alt="" />
+          </div>
         </motion.div>
       </motion.section>
 
-      {/* Team Section */}
+      {/* Why Choose Us Section */}
       <motion.section 
-        className={styles.team}
-        variants={staggerChildren}
-        initial="initial"
-        whileInView="animate"
+        className={styles.features}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
       >
-        <motion.h2 variants={fadeInUp}>Meet Our Team</motion.h2>
-        <motion.p variants={fadeInUp} className={styles.teamIntro}>
-          Dedicated professionals working together to make a difference
-        </motion.p>
-        
-        <div className={styles.teamGrid}>
-          {team.map((member, index) => (
-            <motion.div
+        <h2 className={`${styles.gradient} ${styles.textCenter}`}>
+          Why Choose PetConnect?
+        </h2>
+        <div className={styles.featuresGrid}>
+          {features.map((feature, index) => (
+            <motion.div 
               key={index}
-              className={styles.teamCard}
-              variants={fadeInUp}
-              whileHover={{ y: -10 }}
+              className={styles.featureCard}
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.03,
+                boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)'
+              }}
             >
-              <div className={styles.memberImage}>
-                <img src={member.image} alt={member.name} />
+              <div 
+                className={styles.featureIconWrapper}
+                style={{ backgroundColor: `${feature.color}15` }}
+              >
+                <feature.icon 
+                  className={styles.featureIcon}
+                  style={{ color: feature.color }}
+                />
               </div>
-              <h3>{member.name}</h3>
-              <p className={styles.role}>{member.role}</p>
-              <p className={styles.bio}>{member.bio}</p>
-              <div className={styles.socialLinks}>
-                <motion.a href={member.social.twitter} whileHover={{ scale: 1.2 }}>
-                  <Twitter size={20} />
-                </motion.a>
-                <motion.a href={member.social.instagram} whileHover={{ scale: 1.2 }}>
-                  <Instagram size={20} />
-                </motion.a>
-                <motion.a href={member.social.facebook} whileHover={{ scale: 1.2 }}>
-                  <Facebook size={20} />
-                </motion.a>
-              </div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -190,15 +207,19 @@ function AboutUs() {
           className={styles.contactCard}
           variants={fadeInUp}
         >
-          <h2>Get In Touch</h2>
-          <p>We'd love to hear from you. Reach out to us for any questions or concerns.</p>
+          <h2>Join Our Community</h2>
+          <p>
+            At PetConnect, we're here to help you every step of the way on your pet journey. 
+            Together, let's build a happier world for pets and their humans!
+          </p>
           <motion.button 
             className={styles.contactButton}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            href="/contact"
           >
             <Mail className={styles.mailIcon} />
-            Contact Us
+            Get Started
           </motion.button>
         </motion.div>
       </motion.section>

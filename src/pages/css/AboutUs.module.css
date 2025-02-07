@@ -111,81 +111,66 @@
     background: linear-gradient(45deg, #3b82f6, #8b5cf6);
     opacity: 0.8;
   }
-  
-  /* Team Section */
-  .team {
-    padding: 4rem 0;
-    text-align: center;
-  }
-  
-  .team h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  
-  .teamIntro {
-    color: #6b7280;
-    margin-bottom: 3rem;
-  }
-  
-  .teamGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .teamCard {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  .memberImage {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 1.5rem;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  
-  .memberImage img {
+  .imageWrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  
-  .teamCard h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+  /* Enhanced Features Section */
+.features {
+    padding: 6rem 0;
   }
   
-  .role {
-    color: #3b82f6;
-    font-weight: 500;
-    margin-bottom: 1rem;
+  .features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
   }
   
-  .bio {
-    color: #6b7280;
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .featureCard {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .featureIconWrapper {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1.5rem;
   }
   
-  .socialLinks {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  .featureIcon {
+    width: 2rem;
+    height: 2rem;
   }
   
-  .socialLinks a {
+  .featureCard h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+  
+  .featureCard p {
     color: #6b7280;
-    transition: color 0.3s ease;
+    line-height: 1.7;
   }
-  
-  .socialLinks a:hover {
-    color: #3b82f6;
+  .gradient {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   /* Contact Section */
@@ -238,19 +223,26 @@
     }
   }
   
-  /* Dark Mode Support */
-  @media (prefers-color-scheme: dark) {
-    .statCard,
-    .teamCard {
-      background: #1f2937;
-    }
+  .featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
   
-    .statCard h3 {
-      color: white;
-    }
+  .featureList li {
+    margin-bottom: 1rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
   
-    .contactButton {
-      background: #1f2937;
-      color: white;
-    }
+  .featureList li strong {
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+
+
+  .textCenter {
+    text-align: center;
   }

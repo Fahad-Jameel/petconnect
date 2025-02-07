@@ -334,31 +334,3 @@
     }
   }
   
-  /* Dark mode support */
-  @media (prefers-color-scheme: dark) {
-    .productCard {
-      background: #1f2937;
-    }
-  
-    .categoryButton {
-      background: #374151;
-      color: #e5e7eb;
-    }
-  
-    .cartSidebar {
-      background: #1f2937;
-      color: #e5e7eb;
-    }
-  
-    .cartItem {
-      border-color: #374151;
-    }
-  
-    .quantityButton {
-      background: #374151;
-    }
-  
-    .cartFooter {
-      border-color: #374151;
-    }
-  }

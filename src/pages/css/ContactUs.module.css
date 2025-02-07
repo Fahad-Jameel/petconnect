@@ -265,26 +265,3 @@
     }
   }
   
-  /* Dark Mode Support */
-  @media (prefers-color-scheme: dark) {
-    .contactCard,
-    .formContainer,
-    .mapContainer {
-      background: #1f2937;
-    }
-  
-    .form input,
-    .form textarea {
-      background: #1f2937;
-      border-color: #374151;
-      color: white;
-    }
-  
-    .map {
-      background: #374151;
-    }
-  
-    .contactCard p {
-      color: #9ca3af;
-    }
-  }

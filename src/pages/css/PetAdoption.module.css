@@ -242,24 +242,3 @@
     }
   }
   
-  /* Dark mode support */
-  @media (prefers-color-scheme: dark) {
-    .petCard {
-      background-color: #1f2937;
-    }
-  
-    .categoryButton {
-      background-color: #374151;
-      color: #e5e7eb;
-    }
-  
-    .searchBar input {
-      background-color: #1f2937;
-      border-color: #374151;
-      color: white;
-    }
-  
-    .header p {
-      color: #9ca3af;
-    }
-  }

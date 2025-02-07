@@ -29,7 +29,7 @@ function ContactUs() {
   const contactMethods = [
     { icon: Mail, title: 'Email Us', info: 'support@petconnect.com', delay: 0.1 },
     { icon: Phone, title: 'Call Us', info: '+92 1234567890', delay: 0.2 },
-    { icon: MapPin, title: 'Visit Us', info: 'E11, Islamabad', delay: 0.3 },
+    { icon: MapPin, title: 'Visit Us', info: 'Islamabad', delay: 0.3 },
     { icon: Clock, title: 'Working Hours', info: 'Mon - Fri: 9AM - 6PM', delay: 0.4 }
   ];
 
