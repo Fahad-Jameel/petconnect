@@ -3,6 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, ShoppingCart, Star, Plus, Minus } from 'lucide-react';
 import styles from './css/ShopPage.module.css';
 import dogFood from '../assets/shop/dog-food.jpg';
+import catToyBall from '../assets/shop/cat-toy-ball.jpg';
+import birdAccessories from '../assets/shop/bird-cage.jpg';
+import rabbitFeeder from '../assets/shop/rabbit-feeder.jpg';
+import dogShampoo from '../assets/shop/dog-shampoo.jpg';
+import catScratchingPost from '../assets/shop/cat-sctraching-post.jpg';
+import birdVitamins from '../assets/shop/bird-vitamins.jpg';
+import rabbitChewToy from '../assets/shop/rabbit-chew-toy.jpg';
+import dogCollar from '../assets/shop/dog-collar.jpg';
+import catLitterBox from '../assets/shop/cat-litter-box.jpg';
+
 function ShopPage() {
         const [products, setProducts] = useState([]);
         const [filteredProducts, setFilteredProducts] = useState([]);
@@ -23,6 +33,108 @@ function ShopPage() {
               image: dogFood, 
               description: "High-quality nutrition for your dog"
             },
+
+            {
+              id: 1,
+              name: "Premium Dog Food",
+              category: "food",
+              petType: "dog",
+              price: 2000,
+              rating: 4.5,
+              image: dogFood,
+              description: "High-quality nutrition for your dog."
+            },
+            {
+              id: 2,
+              name: "Cat Toy Ball",
+              category: "toys",
+              petType: "cat",
+              price: 500,
+              rating: 4.7,
+              image: catToyBall,
+              description: "Interactive toy ball for endless fun with your cat."
+            },
+            {
+              id: 3,
+              name: "Bird Cage Accessories Set",
+              category: "accessories",
+              petType: "bird",
+              price: 1500,
+              rating: 4.3,
+              image: birdAccessories,
+              description: "Complete set of bird cage accessories to keep your pet happy."
+            },
+            {
+              id: 4,
+              name: "Rabbit Hay Feeder",
+              category: "accessories",
+              petType: "rabbit",
+              price: 1200,
+              rating: 4.6,
+              image: rabbitFeeder,
+              description: "Hay feeder to keep your rabbit's food clean and organized."
+            },
+            {
+              id: 5,
+              name: "Dog Shampoo",
+              category: "health",
+              petType: "dog",
+              price: 1000,
+              rating: 4.8,
+              image: dogShampoo,
+              description: "Gentle and effective shampoo for a healthy coat."
+            },
+            {
+              id: 6,
+              name: "Cat Scratching Post",
+              category: "toys",
+              petType: "cat",
+              price: 2500,
+              rating: 4.4,
+              image: catScratchingPost,
+              description: "Durable scratching post to keep your cat entertained."
+            },
+            {
+              id: 7,
+              name: "Bird Vitamins",
+              category: "health",
+              petType: "bird",
+              price: 800,
+              rating: 4.5,
+              image: birdVitamins,
+              description: "Essential vitamins to boost your bird's health."
+            },
+            {
+              id: 8,
+              name: "Rabbit Chew Toy",
+              category: "toys",
+              petType: "rabbit",
+              price: 600,
+              rating: 4.2,
+              image: rabbitChewToy,
+              description: "Fun and safe chew toy for your rabbit's dental health."
+            },
+            {
+              id: 9,
+              name: "Dog Collar",
+              category: "accessories",
+              petType: "dog",
+              price: 1500,
+              rating: 4.9,
+              image: dogCollar,
+              description: "Stylish and comfortable dog collar for daily walks."
+            },
+            {
+              id: 10,
+              name: "Cat Litter Box",
+              category: "health",
+              petType: "cat",
+              price: 3000,
+              rating: 4.6,
+              image: catLitterBox,
+              description: "Easy-to-clean litter box for a hygienic environment."
+            },
+            
           ];
       
           setProducts(sampleProducts);
@@ -71,6 +183,53 @@ function ShopPage() {
           });
         };
 
+        const ProductGrid = ({ products }) => (
+          <motion.div 
+            layout
+            className={styles.productsGrid}
+          >
+            {products.map((product) => (
+              <motion.div
+                key={product.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{
+                  opacity: { duration: 0.2 },
+                  layout: { duration: 0.3 }
+                }}
+                className={styles.productCard}
+              >
+                <div className={styles.productImage}>
+                  <img src={product.image} alt={product.name} />
+                </div>
+                <div className={styles.productInfo}>
+                  <div className={styles.productHeader}>
+                    <h3>{product.name}</h3>
+                    <div className={styles.rating}>
+                      <Star className={styles.starIcon} />
+                      <span>{product.rating}</span>
+                    </div>
+                  </div>
+                  <p className={styles.productDescription}>{product.description}</p>
+                  <div className={styles.productFooter}>
+                    <span className={styles.price}>RS. {product.price}</span>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={styles.addToCartButton}
+                      onClick={() => addToCart(product)}
+                    >
+                      Add to Cart
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        );
+
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -109,8 +268,8 @@ function ShopPage() {
         </motion.button>
       </div>
 
-      {/* Categories */}
-      <div className={styles.categories}>
+     {/* Categories */}
+     <div className={styles.categories}>
         {categories.map((category) => (
           <motion.button
             key={category.id}
@@ -129,46 +288,10 @@ function ShopPage() {
         ))}
       </div>
 
-      {/* Products Grid */}
-      <motion.div layout className={styles.productsGrid}>
-        <AnimatePresence>
-          {filteredProducts.map((product) => (
-            <motion.div
-              key={product.id}
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className={styles.productCard}
-            >
-              <div className={styles.productImage}>
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className={styles.productInfo}>
-                <div className={styles.productHeader}>
-                  <h3>{product.name}</h3>
-                  <div className={styles.rating}>
-                    <Star className={styles.starIcon} />
-                    <span>{product.rating}</span>
-                  </div>
-                </div>
-                <p className={styles.productDescription}>{product.description}</p>
-                <div className={styles.productFooter}>
-                  <span className={styles.price}>RS. {product.price}</span>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={styles.addToCartButton}
-                    onClick={() => addToCart(product)}
-                  >
-                    Add to Cart
-                  </motion.button>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+      {/* Products Grid with AnimatePresence wrapper */}
+      <AnimatePresence mode="wait">
+        <ProductGrid products={filteredProducts} />
+      </AnimatePresence>
 
       {/* Cart Sidebar */}
       <AnimatePresence>
