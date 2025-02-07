@@ -1,0 +1,290 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+  
+  /* Header Styles */
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+  
+  .header p {
+    color: #6b7280;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Contact Methods Grid */
+  .contactGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  
+  .contactCard {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .contactCard.selected {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+  }
+  
+  .contactCard.selected .contactIcon {
+    color: white;
+  }
+  
+  .contactIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+  }
+  
+  .contactCard h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contactCard p {
+    color: #6b7280;
+  }
+  
+  .contactCard.selected p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Form Section */
+  .formSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .formContainer {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-right: 2rem;
+  }
+  
+  .inputGroup {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    
+  
+  }
+  
+  .form input,
+  .form textarea {
+    width: 100%;
+    
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+  
+  .form input:focus,
+  .form textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .form textarea {
+    min-height: 150px;
+    resize: vertical;
+    
+  }
+  
+  .form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+  
+  /* Success Message */
+  .successMessage {
+    text-align: center;
+    padding: 3rem;
+    color: #059669;
+  }
+  
+  .successMessage h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+ 
+  .petImageContainer {
+    position: relative;
+    padding-top: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .petImageContainer img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  /* .mapPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+  } */
+  
+  /* Social Media Section */
+  .social {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .social h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .socialIcons a {
+    color: #6b7280;
+    transition: color 0.3s ease;
+  }
+  
+  .socialIcons a:hover {
+    color: #3b82f6;
+  }
+  
+  /* Live Chat Button */
+  .chatButton {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .inputGroup {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .formSection {
+      grid-template-columns: 3fr 2fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contactGrid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  
+    .chatButton span {
+      display: none;
+    }
+  
+    .chatButton {
+      padding: 1rem;
+    }
+  }
+  
+  /* Dark Mode Support */
+  @media (prefers-color-scheme: dark) {
+    .contactCard,
+    .formContainer,
+    .mapContainer {
+      background: #1f2937;
+    }
+  
+    .form input,
+    .form textarea {
+      background: #1f2937;
+      border-color: #374151;
+      color: white;
+    }
+  
+    .map {
+      background: #374151;
+    }
+  
+    .contactCard p {
+      color: #9ca3af;
+    }
+  }
