@@ -7,6 +7,7 @@ import PetAdoption from './pages/PetAdoption';
 import Shop from './pages/ShopPage';
 import AboutUs from './pages/AboutUS';
 import Contact from './pages/ContactUs';
+import BlogPage from './pages/BlogPage';
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} /> 
+            <Route path="/BlogPage" element={<BlogPage />} /> 
       </Routes>      
       </main>
       <Footer />

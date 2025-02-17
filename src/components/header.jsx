@@ -22,6 +22,7 @@ function Header() {
             <a href="/petadoption" className={styles.navLink}>Adopt</a>
             <a href="/about" className={styles.navLink}>About Us</a>
             <a href="/contact" className={styles.navLink}>Contact Us</a>
+            <a href="/BlogPage" className={styles.navLink}>Blog</a>
           </nav>
 
           <div className={styles.headerActions}>
@@ -44,6 +45,7 @@ function Header() {
             <a href="/adopt" className={styles.mobileNavLink}>Adopt</a>
             <a href="/about" className={styles.mobileNavLink}>About Us</a>
             <a href="/contact" className={styles.mobileNavLink}>Contact Us</a>
+            <a href="/BlogPage" className={styles.mobileNavLink}>Blog</a>
             <div className={styles.mobileSearch}>
               <input type="text" placeholder="Search products..." />
               <Search className={styles.searchIcon} />

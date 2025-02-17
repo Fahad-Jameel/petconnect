@@ -1,0 +1,458 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  
+  /* Header Styles */
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+  
+  .header p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #6b7280;
+  }
+  
+  /* Search Section */
+  .searchSection {
+    margin-bottom: 3rem;
+  }
+  
+  .searchBar {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .searchBar input {
+    width: 100%;
+    padding: 1rem 3rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 999px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .searchIcon,
+  .filterIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+  }
+  
+  .searchIcon {
+    left: 1rem;
+  }
+  
+  .filterIcon {
+    right: 1rem;
+    cursor: pointer;
+  }
+  
+  .categories {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem;
+    scrollbar-width: none;
+  }
+  
+  .categories::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .categoryButton {
+    padding: 0.5rem 1.5rem;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .categoryButton:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+  }
+  
+  /* Featured Article */
+  .featuredArticle {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .featuredContent {
+    padding: 2rem;
+  }
+  
+  .featuredTag {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    background: #3b82f6;
+    color: white;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .featuredImage {
+    height: 300px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  }
+  
+  /* Blog Grid */
+  .blogGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .blogCard {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .cardImage {
+    height: 200px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  }
+  
+  .cardContent {
+    padding: 1.5rem;
+  }
+  
+  .category {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    background: #f3f4f6;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cardContent h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  
+  .cardContent p {
+    color: #6b7280;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .cardMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .metaLeft {
+    display: flex;
+    gap: 1rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  .metaLeft span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .metaRight {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .metaRight button {
+    padding: 0.5rem;
+    border: none;
+    background: none;
+    color: #6b7280;
+    cursor: pointer;
+  }
+  
+  /* Newsletter Section */
+  .newsletter {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter p {
+    color: #6b7280;
+    margin-bottom: 2rem;
+  }
+  
+  .subscribeForm {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .subscribeForm input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+  }
+  
+  .subscribeForm button {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .featuredArticle {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .featuredImage {
+      height: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .subscribeForm {
+      flex-direction: column;
+    }
+  
+    .cardContent h3 {
+      font-size: 1.125rem;
+    }
+  }
+  
+  /* Dark Mode Support */
+  @media (prefers-color-scheme: dark) {
+    .categoryButton,
+    .blogCard,
+    .featuredArticle,
+    .newsletter {
+      background: #1f2937;
+    }
+  
+    .cardContent h3 {
+      color: #f3f4f6;
+    }
+  
+    .category {
+      background: #374151;
+      color: #f3f4f6;
+    }
+  
+    .searchBar input,
+    .subscribeForm input {
+      background: #1f2937;
+      border-color: #374151;
+      color: white;
+    }
+  
+    .categoryButton {
+      border-color: #374151;
+      color: #f3f4f6;
+    }
+  }
+
+  /* Add these styles to your existing BlogPage.module.css */
+
+.articleOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+    overflow-y: auto;
+  }
+  
+  .fullArticle {
+    position: relative;
+    background: white;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .articleClose {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 51;
+  }
+  
+  .articleHeader {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    text-align: center;
+  }
+  
+  .articleHeader h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .articleContent {
+    padding: 2rem;
+  }
+  
+  .articleStep {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+  }
+  
+  .articleStep h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e40af;
+  }
+  
+  .articleTip {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #dbeafe;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0.25rem;
+  }
+  
+  .bonusSection {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #ede9fe;
+    border-radius: 0.5rem;
+  }
+  
+  .bonusSection h3 {
+    color: #5b21b6;
+    margin-bottom: 1rem;
+  }
+  
+  .bonusSection ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+  
+  .finalThoughts {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+  
+  .sharebar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .shareButton {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .fullArticle {
+      background: #1f2937;
+    }
+    
+    .articleStep {
+      background: #374151;
+    }
+    
+    .articleTip {
+      background: #1e3a8a;
+    }
+    
+    .bonusSection {
+      background: #2e1065;
+    }
+    
+    .finalThoughts {
+      background: #374151;
+    }
+    
+    .articleClose {
+      background: #374151;
+      color: white;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .fullArticle {
+      margin: 0;
+      min-height: 100vh;
+      border-radius: 0;
+    }
+    
+    .articleHeader,
+    .articleContent {
+      padding: 1.5rem;
+    }
+  }
